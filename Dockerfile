@@ -19,6 +19,9 @@ EXPOSE 8443
 
 WORKDIR /OWF/apache-tomcat
 
+RUN chgrp -R 0 /OWF/apache-tomcat \
+  && chmod -R g+rwX /OWF/apache-tomcat
+
 CMD ["./start.sh"]
 
 # browse to http://localhost:8080/owf
